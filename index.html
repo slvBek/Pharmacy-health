@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аптека "Здоровье"</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-pills"></i>
+                <span>Аптека "Здоровье"</span>
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                <li><a href="#" id="favorites-icon"><i class="fas fa-heart"></i> <span class="favorites-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Добро пожаловать в Аптеку "Здоровье"</h1>
+                <p>Ваше здоровье - наш приоритет</p>
+                <a href="#catalog" class="cta-button">Перейти в каталог</a>
+            </div>
+        </section>
+
+        <section id="catalog" class="products">
+            <h2 class="section-title"><i class="fas fa-pills"></i> Популярные товары</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск лекарств...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filters">
+                <select id="category-filter">
+                    <option value="all">Все категории</option>
+                    <option value="medicines">Лекарства</option>
+                    <option value="vitamins">Витамины</option>
+                    <option value="cosmetics">Косметика</option>
+                    <option value="hygiene">Гигиена</option>
+                </select>
+                <select id="price-filter">
+                    <option value="all">Все цены</option>
+                    <option value="0-10000">До 10,000 сум</option>
+                    <option value="10000-30000">10,000 - 30,000 сум</option>
+                    <option value="30000+">Более 30,000 сум</option>
+                </select>
+                <select id="sort-filter">
+                    <option value="name-asc">По названию (А-Я)</option>
+                    <option value="name-desc">По названию (Я-А)</option>
+                    <option value="price-asc">По цене (возрастание)</option>
+                    <option value="price-desc">По цене (убывание)</option>
+                </select>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="vitamins">
+                    <div class="product-badges">
+                        <span class="badge new">Новинка</span>
+                    </div>
+                    <img src="photos/vitamin-c.jpg" alt="Витамин C">
+                    <h3>Витамин C</h3>
+                    <p>Витамин C 500мг, 100 таблеток</p>
+                    <span class="price">25,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="antipyretics">
+                    <div class="product-badges">
+                        <span class="badge sale">-20%</span>
+                    </div>
+                    <img src="photos/paracetamol.jpg" alt="Парацетамол">
+                    <h3>Парацетамол</h3>
+                    <p>Парацетамол 500мг, 20 таблеток</p>
+                    <span class="price"><span class="old-price">8,000 сум</span> <span class="new-price">6,500 сум</span></span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/aspirin.jpg" alt="Аспирин">
+                    <h3>Аспирин</h3>
+                    <p>Аспирин 100мг, 30 таблеток</p>
+                    <span class="price">12,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/ibuprofen.jpg" alt="Ибупрофен">
+                    <h3>Ибупрофен</h3>
+                    <p>Ибупрофен 200мг, 20 таблеток</p>
+                    <span class="price">15,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/citramon.jpg" alt="Цитрамон">
+                    <h3>Цитрамон</h3>
+                    <p>Цитрамон П, 20 таблеток</p>
+                    <span class="price">7,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/activated-charcoal.jpg" alt="Активированный уголь">
+                    <h3>Активированный уголь</h3>
+                    <p>Активированный уголь 250мг, 30 таблеток</p>
+                    <span class="price">4,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/nospa.jpg" alt="Но-шпа">
+                    <h3>Но-шпа</h3>
+                    <p>Но-шпа 40мг, 24 таблетки</p>
+                    <span class="price">18,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/loperamide.jpg" alt="Лоперамид">
+                    <h3>Лоперамид</h3>
+                    <p>Лоперамид 2мг, 10 таблеток</p>
+                    <span class="price">8,500 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="photos/smecta.jpg" alt="Смекта">
+                    <h3>Смекта</h3>
+                    <p>Смекта 3г, 10 пакетиков</p>
+                    <span class="price">35,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="vitamins">
+                    <div class="product-badges">
+                        <span class="badge new">Новинка</span>
+                    </div>
+                    <img src="photos/albumin.jpg" alt="Альбумин">
+                    <h3>Альбумин 20%</h3>
+                    <p>Раствор для инфузий, 50мл</p>
+                    <span class="price">450,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="vitamins">
+                    <img src="photos/vitamin-d3.jpg" alt="Витамин D3">
+                    <h3>Витамин D3</h3>
+                    <p>Витамин D3 2000 МЕ, 60 капсул</p>
+                    <span class="price">85,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="painkillers">
+                    <img src="photos/ketorol.jpg" alt="Кеторол">
+                    <h3>Кеторол</h3>
+                    <p>Кеторолак 10мг, 20 таблеток</p>
+                    <span class="price">22,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gastro">
+                    <img src="photos/omez.jpg" alt="Омез">
+                    <h3>Омез</h3>
+                    <p>Омепразол 20мг, 30 капсул</p>
+                    <span class="price">45,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="antipyretics">
+                    <img src="photos/nurofen.jpg" alt="Нурофен">
+                    <h3>Нурофен</h3>
+                    <p>Ибупрофен 200мг, 24 таблетки</p>
+                    <span class="price">28,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gastro">
+                    <img src="photos/enterofuril.jpg" alt="Энтерофурил">
+                    <h3>Энтерофурил</h3>
+                    <p>Нифуроксазид 200мг, 16 капсул</p>
+                    <span class="price">32,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="vitamins">
+                    <img src="photos/magnesium-b6.jpg" alt="Магний B6">
+                    <h3>Магний B6</h3>
+                    <p>Магний + B6, 60 таблеток</p>
+                    <span class="price">65,000 сум</span>
+                    <div class="product-actions">
+                        <button class="buy-button">Добавить в корзину</button>
+                        <button class="favorite-button"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button class="pagination-button" disabled><i class="fas fa-chevron-left"></i></button>
+                <span class="pagination-info">Страница 1 из 1</span>
+                <button class="pagination-button" disabled><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> О нашей аптеке</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-history">
+                        <h3><i class="fas fa-history"></i> История</h3>
+                        <p>Основанная в 2010 году, аптека "Здоровье" начала свой путь с небольшой семейной аптеки. За 15 лет мы выросли в надежную сеть аптек, которой доверяют тысячи клиентов.</p>
+                    </div>
+                    <div class="about-mission">
+                        <h3><i class="fas fa-bullseye"></i> Наша миссия</h3>
+                        <p>Обеспечивать наших клиентов качественными лекарственными препаратами по доступным ценам, предоставляя профессиональную консультацию и заботу о здоровье каждого посетителя.</p>
+                    </div>
+                    <div class="about-achievements">
+                        <h3><i class="fas fa-award"></i> Достижения</h3>
+                        <div class="achievements-grid">
+                            <div class="achievement">
+                                <span class="achievement-number">50,000+</span>
+                                <span class="achievement-text">Довольных клиентов</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="achievement-number">5,000+</span>
+                                <span class="achievement-text">Наименований лекарств</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="achievement-number">15+</span>
+                                <span class="achievement-text">Филиалов по городу</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="achievement-number">24/7</span>
+                                <span class="achievement-text">Круглосуточная работа</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-section">
+                    <h2 class="section-title"><i class="fas fa-users"></i> Наша команда</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="photos/team-member-1.jpg" alt="Серикбаев Бекзат" class="team-image">
+                            <h4>Серикбаев Бекзат</h4>
+                            <p class="team-role">Основатель и генеральный директор</p>
+                            <p class="team-description">Более 15 лет опыта в бизнесе. Создал сеть аптек с фокусом на качество обслуживания и доступность лекарств.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="photos/team-member-2.jpg" alt="Сабирова Самира" class="team-image">
+                            <h4>Сабирова Самира</h4>
+                            <p class="team-role">Главный фармацевт</p>
+                            <p class="team-description">Кандидат фармацевтических наук с 20-летним опытом работы. Специализируется на клинической фармакологии.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="photos/team-member-3.jpg" alt="Юсупов Анвар" class="team-image">
+                            <h4>Юсупов Анвар</h4>
+                            <p class="team-role">Руководитель отдела качества</p>
+                            <p class="team-description">Эксперт по контролю качества лекарственных средств. Обеспечивает соответствие всех препаратов стандартам GMP.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits-section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Наши преимущества</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставка в течение 2 часов по городу с соблюдением температурного режима</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Гарантия качества</h3>
+                    <p>Все препараты сертифицированы и проходят строгий контроль качества</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Консультация фармацевта</h3>
+                    <p>Профессиональная консультация 24/7 от опытных специалистов</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Программа лояльности</h3>
+                    <p>Накопительная система скидок и специальные предложения</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts">
+            <h2 class="section-title"><i class="fas fa-address-book"></i> Контакты</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Телефон</h3>
+                    <p>+998 (94) 846-65-06</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Электронная почта</h3>
+                    <p>info@apteka-zdorovie.uz</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Адрес</h3>
+                    <p>ул. Паркентская 62, Ташкент</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Напишите нам</h3>
+                <form id="feedback-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш email" required>
+                    <textarea placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit" class="submit-button">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Режим работы</h3>
+                <p>Пн-Пт: 8:00 - 20:00</p>
+                <p>Сб-Вс: 9:00 - 18:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Социальные сети</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/serikbayev.bekzat/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/bekzod_s0218" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/Dev_Serikbayevb" target="_blank"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Подпишитесь на рассылку</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Ваш email" required>
+                    <button type="submit">Подписаться</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Аптека "Здоровье". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно корзины -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal">
+            <h3>Корзина</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Итого: <span id="cart-total-price">0 сум</span></p>
+            </div>
+            <div class="modal-buttons">
+                <button class="confirm-button">Оформить заказ</button>
+                <button class="cancel-button">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно избранного -->
+    <div id="favorites-modal" class="modal">
+        <div class="modal-content favorites-modal">
+            <h3>Избранное</h3>
+            <div id="favorites-items"></div>
+            <div class="modal-buttons">
+                <button class="cancel-button">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно оформления заказа -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-modal">
+            <h3>Оформление заказа</h3>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Адрес доставки" required></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Комментарий к заказу"></textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="confirm-button">Подтвердить заказ</button>
+                    <button type="button" class="cancel-button">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- AI Консультант -->
+    <div id="ai-consultant" class="ai-consultant">
+        <div class="ai-consultant-button" onclick="toggleAIConsultant()">
+            <i class="fas fa-robot"></i>
+            <span>AI Консультант</span>
+        </div>
+        <div class="ai-consultant-widget">
+            <div class="ai-consultant-header">
+                <h3><i class="fas fa-robot"></i> AI Консультант</h3>
+                <button class="close-button" onclick="toggleAIConsultant()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-consultant-messages" id="ai-messages">
+                <div class="ai-message">
+                </div>
+            </div>
+            <div class="ai-consultant-input">
+                <input type="text" id="ai-input" placeholder="Введите ваш вопрос...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
